@@ -53,3 +53,17 @@ dkms.conf
 
 # debug information files
 *.dwo
+
+# EDK2 / local build（脚本可自动克隆到本目录）
+edk2/
+Build/
+build_rule.txt
+tools_def.txt
+
+# 本地 ROM 与 QEMU 引导文件（体积大 / 勿提交）
+rom/
+esp/EFI/Boot/bootx64.efi
+fonts/UFNT.BIN
+fonts/*.otf
+fonts/*.ttf
+varstore/
