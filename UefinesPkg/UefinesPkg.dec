@@ -1,0 +1,11 @@
+## @file
+# UEFINes package declaration.
+##
+[Defines]
+  DEC_SPECIFICATION              = 0x0001001A
+  PACKAGE_NAME                   = UefinesPkg
+  PACKAGE_GUID                   = 12c4e8a0-9b3d-4f12-8e6a-1d2c3b4a5e70
+  PACKAGE_VERSION                = 0.01
+
+[Includes]
+  Uefines

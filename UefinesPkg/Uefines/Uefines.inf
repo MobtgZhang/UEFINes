@@ -1,0 +1,62 @@
+## @file
+# UEFINes UEFI application module.
+##
+[Defines]
+  INF_VERSION                    = 0x0001001B
+  BASE_NAME                      = Uefines
+  FILE_GUID                      = 5f2b1c3d-4e8a-9b0c-1d2e-3f4a5b6c7d8e
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = UefiMain
+
+[Sources]
+  UefiMain.c
+  Globals.c
+  Gop.c
+  Timer.c
+  Input.c
+  Settings.c
+  FileSystem.c
+  AppMenu.c
+  Emulator/common.c
+  Emulator/cpu.c
+  Emulator/fce.c
+  Emulator/key.c
+  Emulator/memory.c
+  Emulator/mmc.c
+  Emulator/ppu.c
+  Emulator/psg.c
+  Hal/nes_hal.c
+  Hal/nes_gfx_hal.c
+  Ui/adafruit_gfx.c
+  Ui/utf_font.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  UefinesPkg/UefinesPkg.dec
+
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiLib
+  UefiBootServicesTableLib
+  UefiRuntimeServicesTableLib
+  BaseLib
+  BaseMemoryLib
+  DebugLib
+  MemoryAllocationLib
+  DevicePathLib
+  RegisterFilterLib
+  PcdLib
+  PrintLib
+  StackCheckLib
+
+[BuildOptions]
+  GCC:*_*_X64_CC_FLAGS = -U_FORTIFY_SOURCE
+
+[Protocols]
+  gEfiGraphicsOutputProtocolGuid
+  gEfiSimpleFileSystemProtocolGuid
+  gEfiLoadedImageProtocolGuid
+
+[Guids]
+  gEfiFileInfoGuid
